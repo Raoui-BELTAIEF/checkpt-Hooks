@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
-
+import MovieCard from './MovieCard';
 function AddMovie({addmovie}) {
   
   const [show, setShow] = useState(false);
@@ -10,6 +10,12 @@ function AddMovie({addmovie}) {
   const [description, setDescription] = useState("")
   const [posterUrl, setPosterUrl] = useState("")
   const [rate, setRate] = useState(0)
+const handleAdd=()=>{
+  addmovie({id:Math.random(),title,description,posterUrl,rate});handleClose();setTitle(""); setPosterUrl("");setDescription("");setRate("")
+
+
+}
+
 
   return (
     <>
@@ -35,7 +41,7 @@ function AddMovie({addmovie}) {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={()=>{addmovie({id:Math.random(), title,description,posterUrl,rate});handleClose()}}>
+          <Button variant="primary" onClick={()=>{handleAdd()}}>
             Save Changes
           </Button>
         </Modal.Footer>
