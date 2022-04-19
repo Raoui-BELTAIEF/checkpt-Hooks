@@ -7,11 +7,12 @@ import AddMovie from './Components/AddMovie';
 function App() {
 const [movies, setMovies] = useState(Data)
 const addmovie=(newmovie)=>setMovies([...movies,newmovie])
+const [search, setSearch] = useState("")
   return (
     <div>
-    <Navigation/>
+    <Navigation search={search} setSearch={setSearch} />
     <AddMovie addmovie={addmovie} />
-    <MovieList movies={movies}/>
+    <MovieList movies={movies} search={search}/>
     
     </div>
   );

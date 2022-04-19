@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Navigation() {
+function Navigation({search,setSearch}) {
   return (
     <div>
  <Navbar bg="primary" variant="dark">
@@ -14,7 +14,7 @@ function Navigation() {
       <Nav.Link href="#pricing">Pricing</Nav.Link>
     </Nav>
     <span style={{color:"white",marginRight:"10px"}}>Search</span>
-    <input type="text"/>
+    <input type="text" value={search} onChange={(e)=>setSearch(e.target.value)}/>
     </Container>
   </Navbar>
 
